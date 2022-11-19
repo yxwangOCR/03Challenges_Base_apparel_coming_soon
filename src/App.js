@@ -1,6 +1,7 @@
 import "./App.css";
 import MobileLayout from "./component/MobileLayout";
 import DesktopLayout from "./component/DesktopLayout";
+import Footer from "./component/Footer";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -18,9 +19,12 @@ function App() {
   }, [width]);
 
   return (
-    <div className='App'>
-      {width > 768 ? <DesktopLayout /> : <MobileLayout />}
-    </div>
+    <>
+      <div className='App'>
+        {width > 768 ? <DesktopLayout /> : <MobileLayout />}
+      </div>
+      <Footer />
+    </>
   );
 }
 export default App;
