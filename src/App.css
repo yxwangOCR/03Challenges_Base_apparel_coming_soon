@@ -1,38 +1,157 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+  --Gradients-1: Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%);
+  --Gradients-2: linear-gradient(to right, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  --background-color: rgb(250, 250, 245);
+  --background-color-gradients: linear-gradient(
+    0deg,
+    rgba(250, 250, 245, 1) 25%,
+    rgba(230, 229, 226, 1) 82%
+  );
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
   min-height: 100vh;
+}
+
+.App {
+  width: 375px;
+  height: 800px;
+  background: var(--background-color);
+  background: var(--background-color-gradients);
+}
+
+.title {
+  padding: 2rem;
+}
+.title img {
+  height: 1.5rem;
+}
+
+.main {
+  padding: 4rem 2rem;
+  height: 470px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  text-align: center;
+}
+.main h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 9px;
+  color: var(--Dark-Grayish-Red);
+}
+.main h1 span {
+  color: var(--Desaturated-Red);
+}
+.main p {
+  color: var(--Desaturated-Red);
+  font-weight: 300;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  line-height: 1.3rem;
+}
+.email-input {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+  height: 45px;
+  position: relative;
+  left: 1.5rem;
+}
+.input {
+  position: relative;
+  display: inline-block;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--Desaturated-Red);
+  outline: none;
+  border-radius: 25px 0 0 25px;
+  transition: all 0.5s ease;
+  font-size: 20px;
+}
+
+input[type="email"]:focus {
+  outline: none;
+}
+
+input[type="submit"] {
+  position: relative;
+  left: -3.5rem;
+  width: 35%;
+  padding: 0.8rem;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  transition: all 0.5s ease;
+  font-size: 20px;
+  background-image: var(--Gradients-2);
+  cursor: pointer;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 768px) {
+  .App {
+    width: 815px;
+    height: 455px;
+    display: flex;
   }
-  to {
-    transform: rotate(360deg);
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .title {
+    position: relative;
+    right: 3rem;
+  }
+  .title img {
+    height: 2rem;
+    width: 9rem;
+  }
+  img {
+    width: 326px;
+    height: 100%;
+  }
+  .main {
+    margin: 0 3rem;
+    padding: 2rem 0;
+  }
+
+  .main h1 {
+    text-align: left;
+  }
+
+  .main p {
+    text-align: left;
+    padding: 0 0 0 5rem;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    line-height: 1rem;
+  }
+  .email-input {
+    left: 5rem;
   }
 }

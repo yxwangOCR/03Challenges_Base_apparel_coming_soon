@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import MobileLayout from "./component/MobileLayout";
+import DesktopLayout from "./component/DesktopLayout";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [width]);
+
+  useEffect(() => {
+    width < 768 && setWidth(768);
+  }, [width]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      {width > 768 ? <DesktopLayout /> : <MobileLayout />}
     </div>
   );
 }
-
 export default App;
