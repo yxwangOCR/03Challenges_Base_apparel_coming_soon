@@ -4,14 +4,8 @@
   --Desaturated-Red: hsl(0, 36%, 70%);
   --Soft-Red: hsl(0, 93%, 68%);
   --Dark-Grayish-Red: hsl(0, 6%, 24%);
-  --Gradients-1: Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%);
+  --Gradients-1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
   --Gradients-2: linear-gradient(to right, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
-  --background-color: rgb(250, 250, 245);
-  --background-color-gradients: linear-gradient(
-    0deg,
-    rgba(250, 250, 245, 1) 25%,
-    rgba(230, 229, 226, 1) 82%
-  );
 }
 
 * {
@@ -27,13 +21,13 @@ body {
   align-items: center;
   margin: 0 auto;
   min-height: 100vh;
+  background-image: var(--Gradients-2);
 }
 
 .App {
   width: 375px;
   height: 800px;
-  background: var(--background-color);
-  background: var(--background-color-gradients);
+  background-image: var(--Gradients-1);
 }
 
 .title {
@@ -127,7 +121,8 @@ input[type="submit"] {
 }
 .error {
   position: absolute;
-  bottom: 15rem;
+  left: 1rem;
+  bottom: -2rem;
   font-weight: 300;
   font-size: 0.9rem;
   letter-spacing: 1.5px;
@@ -135,7 +130,7 @@ input[type="submit"] {
   color: red;
 }
 footer p {
-  color: var(--Desaturated-Red);
+  color: var(--Dark-Grayish-Red);
   font-size: 0.8rem;
   font-weight: 300;
   letter-spacing: 1.5px;
@@ -158,7 +153,7 @@ footer p {
   }
   .title {
     position: relative;
-    right: 3rem;
+    right: 5rem;
   }
   .title img {
     height: 2rem;
@@ -169,6 +164,36 @@ footer p {
     height: 100%;
   }
   .main {
+    height: 100%;
+    align-items: flex-start;
+    padding: 2rem;
+  }
+
+  .main h1 {
+    text-align: left;
+    padding: 0 0 0 4rem;
+  }
+
+  .main p {
+    text-align: left;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    line-height: 1rem;
+    padding: 0 0 0 4rem;
+  }
+  .email-input {
+    left: 3.5rem;
+  }
+  .error {
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: -2rem;
+    right: 13rem;
+  }
+}
+
+/*
+ .main {
     margin: 0 3rem;
     padding: 2rem 0;
   }
@@ -193,4 +218,4 @@ footer p {
     left: 26rem;
     font-size: 0.8rem;
   }
-}
+*/

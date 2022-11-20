@@ -37,8 +37,8 @@ const Main = () => {
           />
           {error && <img src={ErrorIcon} />}
           <input type='submit' value={">"} onClick={handleOnSubmit} />
+          {error && <h6 className='error'>Please provide a valid email!</h6>}
         </div>
-        {error && <h6 className='error'>Please provide a valid email!</h6>}
       </div>
     </>
   );
